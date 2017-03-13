@@ -16,23 +16,23 @@ var db = require('./db');
 let mainWindow;         // saving from garbage collector
 let tray;
 
-function createWindow (width ,height,dir) {
-    //const {width, height} = electron.screen.getPrimaryDisplay().workAreaSize;
-    mainWindow = new electron.BrowserWindow({width,height, backgroundColor: '#0e0b16'});
+function createWindow () {
+
+  mainWindow = new BrowserWindow({width: 800, height: 600});
 
 //db.onCloseSave();
 
 
-    mainWindow.loadURL('file://' + __dirname + dir);
-   //mainWindow.openDevTools();
-  // Emitted when the window is closed.
-    mainWindow.on('closed', function () {
-        mainWindow = null;
-        });
-    }
+  mainWindow.loadURL('file://' + __dirname + '/index.html');
 
-function createTrayIcon () {
-  tray=new Tray( './applogo.png');
+  // Emitted when the window is closed.
+  mainWindow.on('closed', function () {
+mainWindow = null;
+  });
+}
+
+function createTrayIcon ( ) {
+  tray=new Tray( './art/tray.png');
     var traypopup = Menu.buildFromTemplate([
     {
       label: 'department',
@@ -51,9 +51,9 @@ function createTrayIcon () {
     {label:'exit' , click(){ mainWindow=null ; app.quit() }}  //    {label: 'exit', click(){ app.quit()}}
   ]);
   tray.setContextMenu(traypopup);
-  /*tray.on('click' , function (){
+  tray.on('click' , function (){
     BrowserWindow.show();
-  });*/
+  });
   }
 
 
@@ -62,8 +62,7 @@ function createTrayIcon () {
 // initialization and is ready to create browser windows.
 // Some APIs can only be used after this event occurs.
 app.on('ready', function(){
-      createWindow(400,600,'/login.html');
-    
+      createWindow();
       createTrayIcon();
 });
 
@@ -74,10 +73,3 @@ app.on('window-all-closed', function () {
 
 // In this file you can include the rest of your app's specific main process
 // code. You can also put them in separate files and require them here.
-
-var navigate = function(data){
-    mainWindow.loadURL('file://' + __dirname + '/' + data);
-}
-
-module.exports.navigate = navigate;
-
