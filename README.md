@@ -19,7 +19,7 @@ Keep track of your timetable. Even the Lecture Room in which the lecture will be
 
 This section describes how to install the program and get it working.
 
-* Simply run the installer like any other program in your Operating system.
+* Simply run the installer like any other program in your Operating system.**Not Yet Implemented
 
 == Frequently Asked Questions ==
 
