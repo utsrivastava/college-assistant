@@ -1,11 +1,13 @@
 # college-assistant
 A cross platform desktop app.
+
 === CollegeAssistant ===
 
 Contributors: Anay Darpan Pratyush Utkarsh Vyshak
 Version: 0.0.2
 
 Manage your GPA, Attendance, Timetable and Lunch easily.
+
 == Description ==
 
 A Cross platform student life manager which tries to solve the issues faced by all students alike. 
@@ -46,4 +48,4 @@ while in College.
 To providing help with the code visit the project github repo.
 
 =NOTE=
-The above files will not run until you install the required node_modules for the main folder and the "foyer" folder.
+The above files will not run until you install the required node_modules for the main folder and the "foyer" folder(Foyer modules not mandatory).
